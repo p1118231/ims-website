@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HUQrdBaaK/uuV069L4hiiqU4n3qXzRMA4tB5htVnnTw=",
+  "Hash": "+eyja2OVbilczDHtr6eUEiBVlFeovdzqxF0MptecPxU=",
   "Source": "imsWeb",
   "BasePath": "_content/imsWeb",
   "Mode": "Default",
@@ -498,6 +498,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gaw4oin7l6-gaciblocpu.gz",
+      "SourceId": "imsWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/imsWeb",
+      "RelativePath": "csvFiles/product_data#[.{fingerprint=gaciblocpu}]?.csv.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "lh0oai47nm",
+      "Integrity": "eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv"
     },
     {
       "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gwooe3q9cv-06098lyss8.gz",
@@ -1422,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
+      "SourceId": "imsWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/",
+      "BasePath": "_content/imsWeb",
+      "RelativePath": "csvFiles/product_data#[.{fingerprint}]?.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gaciblocpu",
+      "Integrity": "SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/csvFiles/product_data.csv"
     },
     {
       "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/favicon.ico",
@@ -3022,6 +3064,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-KbRAtTdCZlkPQMEP8615MCQRMWQsaAwQYpxvPAoetmA="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.csv",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gaw4oin7l6-gaciblocpu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000333778371"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.csv",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6824"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.csv.gz",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gaw4oin7l6-gaciblocpu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.gaciblocpu.csv",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gaw4oin7l6-gaciblocpu.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000333778371"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gaciblocpu"
+        },
+        {
+          "Name": "label",
+          "Value": "csvFiles/product_data.csv"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.gaciblocpu.csv",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6824"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gaciblocpu"
+        },
+        {
+          "Name": "label",
+          "Value": "csvFiles/product_data.csv"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SBKkNss+xp2bgXrwuFrETceyJkp44fFRC/ZO1L/GWZY="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/product_data.gaciblocpu.csv.gz",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/gaw4oin7l6-gaciblocpu.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/csv"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Dec 2024 14:29:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gaciblocpu"
+        },
+        {
+          "Name": "label",
+          "Value": "csvFiles/product_data.csv.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eeofhy2cEUsaQTku1MWjDh+JiJVeaOzwRZN0oED9EL0="
         }
       ]
     },
