@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("imsWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eacd2f6ed8920ee5616b244bb4b508d288b37c0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+714f651dc733d7ad49cde147f788c600005ba201")]
 [assembly: System.Reflection.AssemblyProductAttribute("imsWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("imsWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

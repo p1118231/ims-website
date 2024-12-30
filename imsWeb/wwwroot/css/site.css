@@ -33,3 +33,10 @@ body {
 .navbar .bi {
   color: darkmagenta;
 }
+
+header{
+  background-color: #343a40;
+    color: #fff;
+    padding: 1rem;
+}
+

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/imsWeb.s2hbbbackz.bundle.scp.css"
     },
     {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/product-details.css",
+      "PackagePath": "staticwebassets/css/product-details.css"
+    },
+    {
       "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/product.css",
       "PackagePath": "staticwebassets/css/product.css"
     },
