@@ -2,37 +2,52 @@
 @model IEnumerable<Product>
 
 @{
-    ViewData["Title"] = "Product list";
+    ViewData["Title"] = "Product List";
 }
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="~/css/products.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/product.css" asp-append-version="true" />
 </head>
 <body>
-    
+  
 
-<h1>welcome</h1>
+    <main class="container">
+        <section class="welcome-section">
+            <h2>Welcome to Elegant Shopping</h2>
+            <p>Discover premium products curated just for you.</p>
+        </section>
 
-@if (Model != null && Model.Any())
-{
-    <div class="card-container">
-        @foreach (var product in Model)
+        @if (Model != null && Model.Any())
         {
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                </div>
-                <div class="card-footer">
-                    <span class="price">$@product.Price</span>
-                        <button class="basket-button"> Add to Basket</button>
-                </div>
+            <div class="card-container">
+                @foreach (var product in Model)
+                {
+                    <div class="card">
+                        <img src= "@product.ImageUrl" alt="@product.Name" class="card-image" />
+                        <div class="card-body">
+                            <h3 class="card-title">@product.Name</h3>
+                            <p class="card-text">@product.Description</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">$@product.Price</span>
+                            
+                        </div>
+                    </div>
+                }
             </div>
         }
-    </div>
-}
-else
-{
-    <p>No products available.</p>
-}
+        else{
+            <p class="no-products">No products available.</p>
+        }
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Elegant Shopping. All rights reserved.</p>
+    </footer>
 </body>
+</html>

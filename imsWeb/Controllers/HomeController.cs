@@ -23,17 +23,17 @@ public class HomeController : Controller
        
         public async Task<IActionResult> Products()
         {
-            IEnumerable<ProductDto> products = null!;
+            IEnumerable<Product> products = null!;
 
             try{
 
-              //  products = await _productService.GetProducts();
+               products = await _productService.GetProducts();
 
             }
             catch{
 
                 _logger.LogWarning("failure to access undercutters service ");
-                products= Array.Empty<ProductDto>();
+                products= Array.Empty<Product>();
 
             }
 
@@ -43,34 +43,34 @@ public class HomeController : Controller
 
     public async Task<IActionResult> Index()
     {
-        IEnumerable<ProductDto> products = null!;
+        IEnumerable<Product> products = null!;
 
             try{
 
-               // products = await _productService.GetProducts();
+                products = await _productService.GetProducts();
 
             }
             catch (Exception ex){
 
                 _logger.LogWarning($"failure to access product service : {ex.Message}");
-                products= Array.Empty<ProductDto>();
+                products= Array.Empty<Product>();
 
             }
 
             return View(products);
     }
-/*
+
     public async Task<IActionResult> Search(string query)
     
         {
-            //ViewBag.Message = "Please enter a search term.";
-          //  var allProducts = await _productService.GetProducts();
-           // var filteredProducts = allProducts.Where(p => (p.Name??"").Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
+            ViewBag.Message = "Please enter a search term.";
+            var allProducts = await _productService.GetProducts();
+            var filteredProducts = allProducts.Where(p => (p.Name??"").Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
             
-            //return View("Index", filteredProducts); // Return filtered products to the Index view
+            return View("Index", filteredProducts); // Return filtered products to the Index view
         }
 
-        */
+        
 
     public IActionResult Privacy()
     {
