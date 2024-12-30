@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/order-confirmation.css" asp-append-version="true" />
+</head>
+<body>
+    <main class="confirmation-container">
+        <section class="confirmation-message">
+            @if (TempData["Success"] != null)
+            {
+                <h1>@TempData["Success"]</h1>
+            }
+            else
+            {
+                <h1>Something went wrong.</h1>
+            }
+
+            <a href="/" class="btn btn-primary">Continue Shopping</a>
+        </section>
+    </main>
+</body>
+</html>

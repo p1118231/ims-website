@@ -1,0 +1,33 @@
+@model List<imsWeb.Models.Orders.OrderViewModel>
+
+@{
+    ViewData["Title"] = "Your Orders";
+}
+
+<h1>Your Orders</h1>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var order in Model)
+    {
+        <div class="order">
+            <h2>Order #@order.OrderId</h2>
+            <p>Order Date: @order.OrderDate.ToString("MMM dd, yyyy")</p>
+            <p>Total: $@order.TotalPrice</p>
+
+            <ul>
+                @foreach (var item in order.Items)
+                {
+                    <li>
+                        <img src="@item.ProductImage" alt="@item.ProductName" style="width:50px; height:50px;" />
+                        @item.ProductName - Quantity: @item.Quantity, Price: $@item.Price
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+}
+else
+{
+    <p>You have no orders.</p>
+}

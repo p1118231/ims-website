@@ -1,60 +1,65 @@
-@model imsWeb.Models.Product
+@using imsWeb.Models;
+@model Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Product Details";
 }
 
-<h1>Details</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/product-details.css" asp-append-version="true" />
+</head>
+<body>
+    
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Supplier)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Supplier)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <main class="container">
+        <div class="details-grid">
+            <!-- Product Image -->
+            <div class="image-section">
+                <img src="@Model.ImageUrl" alt="@Model.Name" class="product-image" />
+            </div>
+
+            <!-- Product Info -->
+            <div class="info-section">
+                <h1 class="product-title">@Model.Name</h1>
+                <p class="product-description">@Model.Description</p>
+
+                <div class="availability">
+                    @if (Model.Quantity < 10)
+                    {
+                        <p class="low-stock">Hurry! Only @Model.Quantity left in stock.</p>
+                    }
+                    else
+                    {
+                        <p class="in-stock">In Stock</p>
+                    }
+                </div>
+
+                <h2 class="price">$@Model.Price</h2>
+
+                <!-- Quantity Selection -->
+                <form class="add-to-cart-form" method="post" action="/Cart/AddToBasket">
+                    <input type="hidden" name="productId" value="@Model.Id" />
+                    <label for="quantity">Quantity:</label>
+                    <select id="quantity" name="quantity" required>
+                        @for (var i = 1; i <= Math.Min(10, Model.Quantity); i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+
+                    <button type="submit" class="add-to-cart-button">Add to Basket</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Elegant Shopping. All rights reserved.</p>
+    </footer>
+</body>
+</html>

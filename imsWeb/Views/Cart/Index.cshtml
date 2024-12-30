@@ -1,0 +1,66 @@
+@using imsWeb.Models
+@model List<CartItem>
+
+@{
+    ViewData["Title"] = "Your Cart";
+    ViewData["ControllerName"] = "Cart";
+    ViewData["ActionName"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<body>
+    <main class="cart-container">
+        <section class="cart-left">
+            <h2>Your Shopping Cart</h2>
+            @if (Model != null && Model.Any())
+            {
+                <table class="cart-table">
+                    
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img src="@item.Image" alt="@item.ProductName" class="product-image"></td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Quantity</td>
+                                <td>$@item.Price</td>
+                                <td>$@(item.Quantity * item.Price)</td>
+                                <td>
+                                <td>
+                                    <form method="post" asp-action="RemoveItem" asp-controller="Cart">
+                                        <input type="hidden" name="productId" value="@item.ProductId" />
+                                        <button type="submit" class="remove-button">Remove</button>
+                                    </form>
+                                </td>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>Your cart is empty.</p>
+            }
+        </section>
+
+        <section class="cart-right">
+            @if (Model != null && Model.Any())
+            {
+                <div class="checkout-box">
+                    <p class="total-price">Total: <strong>$@Model.Sum(item => item.Quantity * item.Price)</strong></p>
+                    <a class="checkout-btn" asp-action="CheckOut" asp-controller="Cart">Proceed to Checkout</a>
+                </div>
+            }
+        </section>
+    </main>
+</body>
+</html>
