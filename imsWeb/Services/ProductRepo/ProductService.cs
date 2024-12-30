@@ -20,11 +20,21 @@ namespace imsWeb.Services.ProductRepo
         {
             _context = context;
         }
+
+        public async Task<Product?> GetProductByIdAsync(int? id)
+        {
+            return await _context.Product.FindAsync(id);
+        }
+
         public async Task<IEnumerable<Product>> GetProducts()
         {
             return (IEnumerable<Product>)await _context.Product.ToListAsync();
         }
         
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
         
     }
 }

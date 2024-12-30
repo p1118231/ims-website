@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -14,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
 </head>
 <body>
+    @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
     @* Conditionally Render Navbar based on Controller and Action *@
     @if (!(Context.Request.RouteValues["controller"]?.ToString() == "Account" && 
            (Context.Request.RouteValues["action"]?.ToString() == "EditField" || 
@@ -42,7 +45,12 @@
                     <ul>
                         <li><a href="/Home/Index">Home</a></li>
                         <li><a href="/Home/Index">Products</a></li>
-                        <li><a href="/Cart" role="button">Cart</a></li>
+                        <li>
+                        <a href="/Cart/Index" role="button" class="cart-link">
+                        <span class="basket-icon">🛒</span>  
+                        <span class="cart-count">@HttpContextAccessor.HttpContext?.Session.GetInt32("CartCount")</span>
+                          </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

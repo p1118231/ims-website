@@ -14,6 +14,16 @@ builder.Services.AddDbContext<ProductContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddHttpContextAccessor();
+
+// Add session services
+    builder.Services.AddDistributedMemoryCache();
+    builder.Services.AddSession(options =>
+    {
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true; // Necessary for GDPR compliance
+        options.IdleTimeout = TimeSpan.FromMinutes(20); // Adjust timeout as needed
+    });
 
 var app = builder.Build();
 
@@ -49,7 +59,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapStaticAssets();

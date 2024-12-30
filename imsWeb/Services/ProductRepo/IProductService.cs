@@ -7,5 +7,9 @@ public interface IProductService{
 
     Task<IEnumerable<Product>> GetProducts();
 
+    Task<Product?> GetProductByIdAsync(int? id);
+
+    Task SaveChangesAsync();
+
     
 }
