@@ -11,5 +11,7 @@ public interface IProductService{
 
     Task SaveChangesAsync();
 
+    Task<bool> UpdateProduct(Product product);
+
     
 }

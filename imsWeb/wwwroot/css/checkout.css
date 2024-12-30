@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-.cart-container {
+.checkout-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -17,8 +17,8 @@ body {
     gap: 2rem;
 }
 
-/* Left Section: Cart Table */
-.cart-left {
+/* Left Section: Items */
+.checkout-left {
     flex: 3;
     background-color: #fff;
     padding: 1rem;
@@ -26,51 +26,44 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.cart-left h2 {
+.checkout-left h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.cart-table {
-    width: 100%;
-    border-collapse: collapse;
+.checkout-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.cart-table th,
-.cart-table td {
-    text-align: left;
-    padding: 0.75rem;
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid #ddd;
 }
 
-.cart-table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
-}
-
 .product-image {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 4px;
 }
 
-.remove-button {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    cursor: pointer;
+.product-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
 }
 
-.remove-button:hover {
-    background-color: #a71d2a;
+.product-details p {
+    margin: 0.2rem 0;
+    color: #555;
 }
 
-/* Right Section: Checkout Box */
-.cart-right {
+/* Right Section: Order Summary */
+.checkout-right {
     flex: 1;
     background-color: #fff;
     padding: 1rem;
@@ -79,19 +72,17 @@ body {
     text-align: center;
 }
 
-.checkout-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.total-price {
+.checkout-right h2 {
     font-size: 1.5rem;
-    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.checkout-btn {
+.checkout-right p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.place-order-btn {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -101,12 +92,6 @@ body {
     cursor: pointer;
 }
 
-.checkout-btn:hover {
+.place-order-btn:hover {
     background-color: #0056b3;
 }
-
-header{
-    background-color: #343a40;
-      color: #fff;
-      padding: 1rem;
-  }

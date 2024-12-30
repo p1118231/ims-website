@@ -28,8 +28,16 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/Views/Cart/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9DaGVja091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/Views/Cart/OrderConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9PcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/Views/Home/Index.cshtml]

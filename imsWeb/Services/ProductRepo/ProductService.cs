@@ -35,6 +35,13 @@ namespace imsWeb.Services.ProductRepo
         {
             await _context.SaveChangesAsync();
         }
-        
+
+        public async Task<bool> UpdateProduct(Product product)
+        {
+            // Save changes
+         _context.Product.Update(product);
+        await _context.SaveChangesAsync();
+        return true;
+        }
     }
 }

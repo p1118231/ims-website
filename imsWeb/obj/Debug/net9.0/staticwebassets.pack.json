@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets/css/cart.css"
     },
     {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/checkout.css",
+      "PackagePath": "staticwebassets/css/checkout.css"
+    },
+    {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/order-confirmation.css",
+      "PackagePath": "staticwebassets/css/order-confirmation.css"
+    },
+    {
       "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/product-details.css",
       "PackagePath": "staticwebassets/css/product-details.css"
     },

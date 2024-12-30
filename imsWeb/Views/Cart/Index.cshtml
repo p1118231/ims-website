@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 <body>
     <main class="cart-container">
         <section class="cart-left">
@@ -32,10 +34,12 @@
                                 <td>$@item.Price</td>
                                 <td>$@(item.Quantity * item.Price)</td>
                                 <td>
-                                    <form method="post" action="/Cart/RemoveItem">
+                                <td>
+                                    <form method="post" asp-action="RemoveItem" asp-controller="Cart">
                                         <input type="hidden" name="productId" value="@item.ProductId" />
                                         <button type="submit" class="remove-button">Remove</button>
                                     </form>
+                                </td>
                                 </td>
                             </tr>
                         }
@@ -53,7 +57,7 @@
             {
                 <div class="checkout-box">
                     <p class="total-price">Total: <strong>$@Model.Sum(item => item.Quantity * item.Price)</strong></p>
-                    <button class="checkout-btn" asp-action="CheckOut" asp-controller="Cart">Proceed to Checkout</button>
+                    <a class="checkout-btn" asp-action="CheckOut" asp-controller="Cart">Proceed to Checkout</a>
                 </div>
             }
         </section>

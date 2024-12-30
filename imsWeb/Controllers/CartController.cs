@@ -86,5 +86,97 @@ public class CartController:Controller{
         return RedirectToAction("Index", "Home");
     }
 
+    [HttpPost]
+    public IActionResult RemoveItem(int productId)
+    {
+        // Retrieve the cart from the session
+        var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
+
+        // Find the item to remove
+        var itemToRemove = cart.FirstOrDefault(c => c.ProductId == productId);
+        if (itemToRemove != null)
+        {
+            cart.Remove(itemToRemove);
+        }
+
+        // Update the session
+        HttpContext.Session.SetObjectAsJson("Cart", cart);
+
+        // Redirect back to the Cart view
+        return RedirectToAction("Index","Cart");
+    }
+
+    [HttpGet]
+    public IActionResult CheckOut()
+    {
+        // Retrieve the cart from the session
+        var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
+
+        if (cart == null || !cart.Any())
+        {
+            TempData["Error"] = "Your cart is empty. Add items before proceeding to checkout.";
+            return RedirectToAction("Cart");
+        }
+
+        // Pass the cart to the view
+        return View(cart);
+    }
+
+    [HttpPost]
+    
+    public async Task<IActionResult> PlaceOrder()
+    {
+        // Retrieve the cart from the session
+        var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart");
+
+        if (cart == null || !cart.Any())
+        {
+            TempData["Error"] = "Your cart is empty. Add items before placing an order.";
+            return RedirectToAction("Cart", "Cart");
+        }
+
+        // Update the product quantities in the database
+        foreach (var item in cart)
+        {
+            var product = await _productService.GetProductByIdAsync(item.ProductId);
+            if (product == null)
+            {
+                TempData["Error"] = $"Product '{item.ProductName}' no longer exists.";
+                return RedirectToAction("Cart", "Cart");
+            }
+
+            if (product.Quantity < item.Quantity)
+            {
+                TempData["Error"] = $"Not enough stock for '{item.ProductName}'. Available: {product.Quantity}.";
+                return RedirectToAction("Cart", "Cart");
+            }
+
+            // Deduct the ordered quantity
+           // product.Quantity -= item.Quantity;
+
+            // Update the product in the database
+           // await _productService.UpdateProduct(product);
+        }
+
+        // Save changes to the database
+       // await _productService.SaveChangesAsync();
+
+        // Clear the cart after placing the order
+        HttpContext.Session.Remove("Cart");
+        HttpContext.Session.SetInt32("CartCount", 0);
+
+        // Set the success message
+        TempData["Success"] = "Your order has been placed successfully! Thank you for shopping with us.";
+
+        return RedirectToAction("OrderConfirmation");
+    }
+
+
+    [HttpGet]
+    public IActionResult OrderConfirmation()
+    {
+        return View();
+    }
+
 }
 

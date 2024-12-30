@@ -1,0 +1,51 @@
+@using imsWeb.Models
+@model List<CartItem>
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/checkout.css" asp-append-version="true" />
+</head>
+<body>
+    <main class="checkout-container">
+        <!-- Left Section: Summary -->
+        <section class="checkout-left">
+            <h2>Review Your Items</h2>
+            @if (Model != null && Model.Any())
+            {
+                <ul class="checkout-items">
+                    @foreach (var item in Model)
+                    {
+                        <li class="checkout-item">
+                            <img src="@item.Image" alt="@item.ProductName" class="product-image" />
+                            <div class="product-details">
+                                <h3>@item.ProductName</h3>
+                                <p>Quantity: @item.Quantity</p>
+                                <p>Price: $@item.Price</p>
+                                <p>Total: $@(item.Quantity * item.Price)</p>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            }
+        </section>
+
+        <!-- Right Section: Order Summary -->
+        <section class="checkout-right">
+            <h2>Order Summary</h2>
+            <p>Total Items: <strong>@Model.Sum(item => item.Quantity)</strong></p>
+            <p>Total Price: <strong>$@Model.Sum(item => item.Quantity * item.Price)</strong></p>
+            <form method="post" action="/Order/PlaceOrder">
+                <button type="submit" asp-asp-controller="Cart" asp-action="PlaceOrder" class="place-order-btn">Place Order</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
