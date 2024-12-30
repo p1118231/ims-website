@@ -9,6 +9,8 @@ using imsWeb.Data;
 using imsWeb.Models;
 using imsWeb.Services.ProductRepo;
 using imsWeb.Services.HttpServices;
+using imsWeb.Models.Orders;
+using imsWeb.Services.OrderRepo;
 
 namespace imsWeb.Controllers;
 
@@ -17,13 +19,19 @@ public class CartController:Controller{
     private readonly ILogger<CartController> _logger;
     private readonly IProductService _productService;
 
-    public CartController(ILogger<CartController> logger, IProductService productService)
+    private readonly IOrderService _orderService;
+
+
+
+    public CartController(ILogger<CartController> logger, IProductService productService, IOrderService orderService)
     {
         _logger = logger;
         _productService = productService;
+        _orderService = orderService;
     }
 
     [HttpGet]
+    //show the items in the cart
     public IActionResult Index()
     {
             // Retrieve the cart from the session
@@ -34,6 +42,7 @@ public class CartController:Controller{
     }
 
     [HttpPost]
+    //add to basket
     public async Task<IActionResult> AddToBasket(int productId, int quantity)
     {
         var product = await _productService.GetProductByIdAsync(productId);
@@ -87,6 +96,7 @@ public class CartController:Controller{
     }
 
     [HttpPost]
+    //remove item from the cart
     public IActionResult RemoveItem(int productId)
     {
         // Retrieve the cart from the session
@@ -107,6 +117,7 @@ public class CartController:Controller{
     }
 
     [HttpGet]
+    //direct the user to the checkout 
     public IActionResult CheckOut()
     {
         // Retrieve the cart from the session
@@ -123,7 +134,7 @@ public class CartController:Controller{
     }
 
     [HttpPost]
-    
+    //direct user to place an order 
     public async Task<IActionResult> PlaceOrder()
     {
         // Retrieve the cart from the session
@@ -134,6 +145,23 @@ public class CartController:Controller{
             TempData["Error"] = "Your cart is empty. Add items before placing an order.";
             return RedirectToAction("Cart", "Cart");
         }
+
+        // Create a new order
+        var order = new Order
+        {
+            OrderDate = DateTime.UtcNow,
+            TotalPrice = cart.Sum(c => c.Quantity * c.Price),
+            OrderItems = cart.Select(c => new OrderItem
+            {
+                ProductId = c.ProductId,
+                Quantity = c.Quantity,
+                Price = c.Price
+            }).ToList()
+        };
+
+        // Add the order to the database
+        await _orderService.AddOrder(order);
+        await _orderService.SaveChangesAsync();
 
         // Update the product quantities in the database
         foreach (var item in cart)
@@ -173,6 +201,7 @@ public class CartController:Controller{
 
 
     [HttpGet]
+    //show a confirmation after placing an order 
     public IActionResult OrderConfirmation()
     {
         return View();

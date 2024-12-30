@@ -5,6 +5,7 @@ using imsWeb.Data;
 using CsvHelper;
 using System.Globalization;
 using imsWeb.Models;
+using imsWeb.Services.OrderRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ProductContext>(options =>
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<ProductContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 builder.Services.AddHttpContextAccessor();
 
 // Add session services
