@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets/imsWeb.s2hbbbackz.bundle.scp.css"
     },
     {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/product.css",
+      "PackagePath": "staticwebassets/css/product.css"
+    },
+    {
       "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
+      "PackagePath": "staticwebassets/csvFiles/product_data.csv"
     },
     {
       "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/favicon.ico",
