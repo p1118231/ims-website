@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SEZTGREQbM8=",
+  "dgSpecHash": "1/zj/ioBXT0=",
   "success": true,
   "projectFilePath": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/imsWeb.csproj",
   "expectedPackageFiles": [
+    "/Users/breezy/.nuget/packages/auth0.aspnetcore.authentication/1.4.1/auth0.aspnetcore.authentication.1.4.1.nupkg.sha512",
     "/Users/breezy/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/breezy/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/breezy/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512",
