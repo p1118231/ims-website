@@ -7,22 +7,53 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using imsWeb.Data;
 using imsWeb.Models;
+using imsWeb.Services.ProductRepo;
 
 namespace imsWeb.Controllers
 {
+
+     [Route("api/products")]
     public class ProductController : Controller
     {
-        private readonly ProductContext _context;
+    
 
-        public ProductController(ProductContext context)
+        private readonly ILogger<ProductController> _logger;
+
+        private readonly IProductService _productService;
+
+
+
+        public ProductController(ILogger<ProductController> logger, IProductService productService)
         {
-            _context = context;
+            _logger = logger;
+            _productService = productService;
         }
 
         // GET: Product
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            return View(await _productService.GetProducts());
+        }
+
+        //getting products and returnin to the api
+        [HttpGet]
+        public async Task<IActionResult> GetsProducts()
+        {
+            IEnumerable<Product> products = null!;
+
+            try{
+
+               products = await _productService.GetProducts();
+
+            }
+            catch{
+
+                _logger.LogWarning("failure to access undercutters service ");
+                products= Array.Empty<Product>();
+
+            }
+
+            return (IActionResult)products;
         }
 
         // GET: Product/Details/5
@@ -33,8 +64,7 @@ namespace imsWeb.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -58,8 +88,8 @@ namespace imsWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(product);
-                await _context.SaveChangesAsync();
+                await _productService.AddProduct(product);
+                await _productService.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -73,7 +103,7 @@ namespace imsWeb.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product.FindAsync(id);
+            var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -97,8 +127,8 @@ namespace imsWeb.Controllers
             {
                 try
                 {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
+                    await _productService.UpdateProduct(product);
+                    await _productService.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -124,8 +154,7 @@ namespace imsWeb.Controllers
                 return NotFound();
             }
 
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var product = await _productService.GetProductByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -139,19 +168,21 @@ namespace imsWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var product = await _context.Product.FindAsync(id);
+            var product =  await _productService.GetProductByIdAsync(id);
             if (product != null)
             {
-                _context.Product.Remove(product);
+                await _productService.RemoveProduct(product);
             }
 
-            await _context.SaveChangesAsync();
+            await _productService.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-            return _context.Product.Any(e => e.Id == id);
+            return _productService.ProductExists(id);
         }
     }
+
+    
 }

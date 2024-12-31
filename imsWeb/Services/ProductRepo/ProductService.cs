@@ -21,6 +21,14 @@ namespace imsWeb.Services.ProductRepo
             _context = context;
         }
 
+        public async Task<bool> AddProduct(Product product)
+        {
+             // Save changes
+         await _context.Product.AddAsync(product);
+        await _context.SaveChangesAsync();
+        return true;
+        }
+
         public async Task<Product?> GetProductByIdAsync(int? id)
         {
             return await _context.Product.FindAsync(id);
@@ -30,7 +38,19 @@ namespace imsWeb.Services.ProductRepo
         {
             return (IEnumerable<Product>)await _context.Product.ToListAsync();
         }
-        
+
+        public bool ProductExists(int id)
+        {
+            return _context.Product.Any(e => e.Id == id);
+        }
+
+        public async Task<bool> RemoveProduct(Product product)
+        {
+            _context.Product.Remove(product);
+        await _context.SaveChangesAsync();
+        return true;
+        }
+
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();

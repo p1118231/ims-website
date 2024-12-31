@@ -370,3 +370,4 @@
 /Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/7luvgjf6kc-l3ohjqbjhx.gz
 /Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/yeowrjg478-u6r8cg87pg.gz
 /Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/obj/Debug/net9.0/compressed/12u27ia07k-dxdz3vupgr.gz
+/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll

@@ -13,5 +13,11 @@ public interface IProductService{
 
     Task<bool> UpdateProduct(Product product);
 
+    Task<bool> AddProduct(Product product);
+
+    Task<bool> RemoveProduct(Product product);
+
+    bool ProductExists(int id);
+
     
 }
