@@ -30,7 +30,7 @@ builder.Services.AddDbContext<ProductContext>(options =>
     }
     else
     {
-         var cs = builder.Configuration.GetConnectionString("AccountContext");
+         var cs = builder.Configuration.GetConnectionString("ProductContext");
         options.UseSqlServer(cs, sqlServerOptionsAction: sqlOptions =>
             sqlOptions.EnableRetryOnFailure(
                 maxRetryCount: 5,
