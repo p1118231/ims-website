@@ -12,7 +12,7 @@ using imsWeb.Services.ProductRepo;
 namespace imsWeb.Controllers
 {
 
-     [Route("api/products")]
+     [Route("api/product")]
     public class ProductController : Controller
     {
     
@@ -36,7 +36,7 @@ namespace imsWeb.Controllers
         }
 
         //getting products and returnin to the api
-        [HttpGet]
+        [HttpGet("products")]
         public async Task<IActionResult> GetsProducts()
         {
             IEnumerable<Product> products = null!;

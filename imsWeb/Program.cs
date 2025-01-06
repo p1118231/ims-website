@@ -102,6 +102,8 @@ builder.Services.ConfigureSameSiteNoneCookies();
 
 var app = builder.Build();
 
+if(builder.Environment.IsDevelopment()){
+
 // Use this code to insert products into the database once
 using (var scope = app.Services.CreateScope())
 {
@@ -122,6 +124,7 @@ using (var scope = app.Services.CreateScope())
             dbContext.SaveChanges();
         }
     }
+}
 }
 
 // Configure the HTTP request pipeline.
