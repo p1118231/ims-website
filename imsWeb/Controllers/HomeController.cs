@@ -32,7 +32,7 @@ public class HomeController : Controller
             }
             catch{
 
-                _logger.LogWarning("failure to access undercutters service ");
+                _logger.LogWarning("failure to access  service ");
                 products= Array.Empty<Product>();
 
             }

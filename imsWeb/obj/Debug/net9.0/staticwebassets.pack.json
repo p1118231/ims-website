@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
+      "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/.Rapp.history",
+      "PackagePath": "staticwebassets/csvFiles/.Rapp.history"
+    },
+    {
       "Id": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
       "PackagePath": "staticwebassets/csvFiles/product_data.csv"
     },

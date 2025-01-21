@@ -179,15 +179,19 @@ public class CartController:Controller{
                 return RedirectToAction("Cart", "Cart");
             }
 
+            Console.Write("Product Quantity: " + product.Quantity);
+
             // Deduct the ordered quantity
-           // product.Quantity -= item.Quantity;
+            product.Quantity -= item.Quantity;
 
             // Update the product in the database
-           // await _productService.UpdateProduct(product);
+            await _productService.UpdateProduct(product);
+            Console.Write("Product Quantity: " + product.Quantity);
         }
 
         // Save changes to the database
-       // await _productService.SaveChangesAsync();
+        await _productService.SaveChangesAsync();
+        
 
         // Clear the cart after placing the order
         HttpContext.Session.Remove("Cart");

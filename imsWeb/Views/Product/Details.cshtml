@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="~/css/product-details.css" asp-append-version="true" />
 </head>
 <body>
-    
-
+   @if(Model!=null){
     <main class="container">
         <div class="details-grid">
             <!-- Product Image -->
@@ -61,5 +60,10 @@
     <footer class="site-footer">
         <p>&copy; 2024 Elegant Shopping. All rights reserved.</p>
     </footer>
+    }
+    else{
+        <p class="empty">No current details for this product</p>
+    }
+
 </body>
 </html>

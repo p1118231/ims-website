@@ -24,9 +24,10 @@ namespace imsWeb.Services.ProductRepo
         public async Task<bool> AddProduct(Product product)
         {
              // Save changes
-         await _context.Product.AddAsync(product);
+        await _context.Product.AddAsync(product);
         await _context.SaveChangesAsync();
         return true;
+
         }
 
         public async Task<Product?> GetProductByIdAsync(int? id)

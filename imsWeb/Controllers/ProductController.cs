@@ -12,7 +12,7 @@ using imsWeb.Services.ProductRepo;
 namespace imsWeb.Controllers
 {
 
-     [Route("api/product")]
+    
     public class ProductController : Controller
     {
     
@@ -63,14 +63,25 @@ namespace imsWeb.Controllers
             {
                 return NotFound();
             }
+            Product? product = null;
 
-            var product = await _productService.GetProductByIdAsync(id);
+            try{
+
+             product = await _productService.GetProductByIdAsync(id);
+
             if (product == null)
             {
                 return NotFound();
             }
+            } 
+            catch{
+                _logger.LogWarning("failure to get product details");
+                return StatusCode(500, "Internal server error");
+            }
 
             return View(product);
+
+            
         }
 
         // GET: Product/Create

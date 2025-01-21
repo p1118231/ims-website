@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A/SBB+w2cS89lP37xDFQfGvzXtgi+CYfH9h6IDAxQWs=",
+  "Hash": "Q1eQrG/Qbo6nxMduoj6BncXNP1GrvA48BHXRARevmb4=",
   "Source": "imsWeb",
   "BasePath": "_content/imsWeb",
   "Mode": "Default",
@@ -1653,6 +1653,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/.Rapp.history",
+      "SourceId": "imsWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/",
+      "BasePath": "_content/imsWeb",
+      "RelativePath": "csvFiles/.Rapp#[.{fingerprint}]?.history",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/csvFiles/.Rapp.history"
     },
     {
       "Identity": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/product_data.csv",
@@ -4764,6 +4785,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Tl94riD6xiGSDFPbNR2xFVo+GL+/5ytkAB7bIJ7AbQk="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/.Rapp.5ipweew5fc.history",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/.Rapp.history",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Jan 2025 20:19:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "csvFiles/.Rapp.history"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "csvFiles/.Rapp.history",
+      "AssetFile": "/Users/breezy/Documents/breezy/third_year/ims-website/imsWeb/wwwroot/csvFiles/.Rapp.history",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 20 Jan 2025 20:19:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     },
