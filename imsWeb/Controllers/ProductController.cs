@@ -129,7 +129,7 @@ namespace imsWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Quantity,Category,ImageUrl,Description,Price,Supplier")] Product product)
         {
-            if (id != product.Id)
+            if (id != product.ProductId)
             {
                 return NotFound();
             }
@@ -143,7 +143,7 @@ namespace imsWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.Id))
+                    if (!ProductExists(product.ProductId))
                     {
                         return NotFound();
                     }

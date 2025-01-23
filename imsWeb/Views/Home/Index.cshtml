@@ -25,7 +25,7 @@
             <div class="card-container">
                 @foreach (var product in Model)
                 {
-                    <a href="/Product/Details/@product.Id">
+                    <a href="/Product/Details/@product.ProductId">
                     <div class="card">
                         <img src= "@product.ImageUrl" alt="@product.Name" class="card-image" />
                         <div class="card-body">

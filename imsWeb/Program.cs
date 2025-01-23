@@ -11,6 +11,10 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.OpenApi.Models;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using CsvHelper.Configuration;
+using System.IO;
+using System.Linq;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<ProductContext>(options =>
@@ -108,22 +112,49 @@ if(builder.Environment.IsDevelopment()){
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ProductContext>();
-
-    // Check if the database is empty, then insert products from CSV
+    // Check if the database is empty, then insert data from CSV files
     if (!dbContext.Product.Any())
     {
-        
-        var csvFilePath = "wwwroot/csvFiles/product_data.csv";  // Adjust this path if necessary
+        var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
+        {
+            MissingFieldFound = null,  // Ignore missing fields
+            HeaderValidated = null    // Ignore header validation issues
+        };
+        // Load suppliers into a dictionary for mapping
+        var suppliers = dbContext.Suppliers.ToDictionary(s => s.Name!, s => s.SupplierId);
+        // Load products from the CSV file and insert them into the database
+        var csvFilePath = "wwwroot/csvFiles/products_data.csv";  // Adjust this path if necessary
         using (var reader = new StreamReader(csvFilePath))
         using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-        {
-            var products = csv.GetRecords<Product>().ToList();
+        {var productsFromCsv = csv.GetRecords<Product>().ToList();
 
-            // Insert products into the database
-            dbContext.Product.AddRange(products);
-            dbContext.SaveChanges();
+            
+
+            dbContext.Product.AddRange(productsFromCsv);
         }
+
+        // Load categories from the CSV file and insert them into the database
+        var categoryCsvFilePath = "wwwroot/csvFiles/category_data.csv";  // Adjust this path if necessary
+        using (var reader = new StreamReader(categoryCsvFilePath))
+        using (var csv = new CsvReader(reader, csvConfig))
+        {
+            var categories = csv.GetRecords<Category>().ToList();
+            dbContext.Categories.AddRange(categories);
+        }
+
+        // Load suppliers from the CSV file and insert them into the database
+        var supplierCsvFilePath = "wwwroot/csvFiles/supplier_data.csv";  // Adjust this path if necessary
+        using (var reader = new StreamReader(supplierCsvFilePath))
+        using (var csv = new CsvReader(reader, csvConfig))
+        {
+            var supplier = csv.GetRecords<Supplier>().ToList();
+            dbContext.Suppliers.AddRange(supplier);
+        }
+
+        // Save changes to the database after all entities are added
+        dbContext.SaveChanges();
     }
+
 }
 
 }

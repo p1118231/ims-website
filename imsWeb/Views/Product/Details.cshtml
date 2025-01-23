@@ -42,7 +42,7 @@
 
                 <!-- Quantity Selection -->
                 <form class="add-to-cart-form" method="post" action="/Cart/AddToBasket">
-                    <input type="hidden" name="productId" value="@Model.Id" />
+                    <input type="hidden" name="productId" value="@Model.ProductId" />
                     <label for="quantity">Quantity:</label>
                     <select id="quantity" name="quantity" required>
                         @for (var i = 1; i <= Math.Min(10, Model.Quantity); i++)

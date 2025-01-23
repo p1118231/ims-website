@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using imsWeb.Models;
 using imsWeb.Data;
-using Microsoft.EntityFrameworkCore; // Ensure the correct namespace for ProductDto
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic; // Ensure the correct namespace for ProductDto
 
 namespace imsWeb.Services.ProductRepo
 {
@@ -42,7 +43,7 @@ namespace imsWeb.Services.ProductRepo
 
         public bool ProductExists(int id)
         {
-            return _context.Product.Any(e => e.Id == id);
+            return _context.Product.Any(e => e.ProductId == id);
         }
 
         public async Task<bool> RemoveProduct(Product product)
