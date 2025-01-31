@@ -11,8 +11,8 @@ using imsWeb.Data;
 namespace imsWeb.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20250121184331_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250131202059_FixOrderDate")]
+    partial class FixOrderDate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,16 +120,7 @@ namespace imsWeb.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("TEXT");
 
                     b.HasKey("SupplierId");

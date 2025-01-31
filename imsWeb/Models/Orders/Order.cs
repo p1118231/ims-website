@@ -7,6 +7,8 @@ namespace imsWeb.Models.Orders;
 public class Order
 {
     public int Id { get; set; }
+
+    [Column(TypeName = "datetime2")]
     public DateTime OrderDate { get; set; } = DateTime.UtcNow;
 
     [Column(TypeName = "decimal(18, 2)")]
