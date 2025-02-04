@@ -11,7 +11,7 @@ using imsWeb.Data;
 namespace imsWeb.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20250121184331_InitialCreate")]
+    [Migration("20250202204737_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

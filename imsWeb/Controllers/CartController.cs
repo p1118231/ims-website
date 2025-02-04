@@ -143,7 +143,7 @@ public class CartController:Controller{
         if (cart == null || !cart.Any())
         {
             TempData["Error"] = "Your cart is empty. Add items before placing an order.";
-            return RedirectToAction("Cart", "Cart");
+            return RedirectToAction("Index", "Cart");
         }
 
         // Create a new order

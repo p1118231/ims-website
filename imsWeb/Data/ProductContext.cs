@@ -26,6 +26,34 @@ namespace imsWeb.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Order>()
+                .HasKey(o => o.Id);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Product>()
+              .HasKey(p => p.ProductId);
+
+            modelBuilder.Entity<Product>()
+                .Property(p=>p.ProductId)
+                .ValueGeneratedOnAdd();  
+
+              modelBuilder.Entity<Supplier>()
+              .HasKey(s=>s.SupplierId);
+
+              modelBuilder.Entity<Supplier>()
+                .Property(s => s.SupplierId)
+                .ValueGeneratedOnAdd();
+
+              modelBuilder.Entity<Category>()
+              .HasKey(c=>c.CategoryId);
+
+              modelBuilder.Entity<Category>()
+                .Property(c => c.CategoryId)
+                .ValueGeneratedOnAdd();
+
             // Configure Product relationships
             modelBuilder.Entity<Product>()
                 .HasOne(p => p.Supplier)

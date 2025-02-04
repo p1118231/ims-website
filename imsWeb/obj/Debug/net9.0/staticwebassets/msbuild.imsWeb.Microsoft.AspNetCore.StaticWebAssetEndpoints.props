@@ -112,13 +112,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\csvFiles\supplier_data.csv'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"347endyn8s"},{"Name":"integrity","Value":"sha256-g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ="},{"Name":"label","Value":"_content/imsWeb/csvFiles/supplier_data.csv"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"464"},{"Name":"Content-Type","Value":"text/csv"},{"Name":"ETag","Value":"\u0022g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 21 Jan 2025 19:49:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"464"},{"Name":"Content-Type","Value":"text/csv"},{"Name":"ETag","Value":"\u0022g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ=\u0022"},{"Name":"Last-Modified","Value":"Sun, 02 Feb 2025 21:05:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/imsWeb/csvFiles/supplier_data.csv">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\csvFiles\supplier_data.csv'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"464"},{"Name":"Content-Type","Value":"text/csv"},{"Name":"ETag","Value":"\u0022g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 21 Jan 2025 19:49:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"464"},{"Name":"Content-Type","Value":"text/csv"},{"Name":"ETag","Value":"\u0022g8aBNXOOA/p3NZ\u002BkPF7kQgVMgxspXzi1iXtS6OViVFQ=\u0022"},{"Name":"Last-Modified","Value":"Sun, 02 Feb 2025 21:05:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/imsWeb/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
