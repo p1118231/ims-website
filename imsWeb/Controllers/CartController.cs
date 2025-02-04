@@ -139,6 +139,7 @@ public class CartController:Controller{
     {
         // Retrieve the cart from the session
         var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart");
+        Console.Write("Cart: " + cart);
 
         if (cart == null || !cart.Any())
         {
@@ -162,6 +163,8 @@ public class CartController:Controller{
         // Add the order to the database
         await _orderService.AddOrder(order);
         await _orderService.SaveChangesAsync();
+
+        Console.Write("Order Id: " + order.Id);
 
         // Update the product quantities in the database
         foreach (var item in cart)
